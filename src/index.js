@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import UserProvider from './context/userContext'
-import ProductsProvider from './context/productsContext'
+import UserProvider from './contexts/user.context'
+import ProductsProvider from './contexts/products.context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,6 +1,6 @@
 import { useState , useContext } from 'react';
 
-import { UserContext } from '../../context/userContext'
+import { UserContext } from '../../contexts/user.context'
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
