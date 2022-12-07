@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import UserProvider from './contexts/user.context'
-import CartProvider from './contexts/cart.context'
+import {CartProvider} from './contexts/cart.context'
 import ProductsProvider from './contexts/products.context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
