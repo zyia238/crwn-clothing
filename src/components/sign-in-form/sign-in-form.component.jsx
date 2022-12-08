@@ -22,7 +22,7 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  const { currentUser,setCurrentUser } = useContext(UserContext)
+  const { dispatch } = useContext(UserContext)
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -32,6 +32,13 @@ const SignInForm = () => {
     const { user } = await signInWithGooglePopup();
     await createUserDocumentFromAuth(user);
   };
+
+  const setCurrentUser = (user) => {
+    dispatch({
+      type:'CHANGE_CURRENT_USER',
+      payload:user
+    })
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();

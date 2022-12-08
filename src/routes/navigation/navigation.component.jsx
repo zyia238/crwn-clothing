@@ -15,13 +15,17 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 import './navigation.style.scss'
 
 const Navigation = () => {
-    const { currentUser , setCurrentUser } = useContext(UserContext)
+    const { state:{currentUser} , dispatch } = useContext(UserContext)
     const { isCartOpen } = useContext(CartContext);
 
-
+    const setCurrentUser = () => {
+      dispatch({
+        type:'SIGN_OUT'
+      })
+    }
     const signOut = () => {
       signOutUser()
-      setCurrentUser(null)
+      setCurrentUser()
     }
     return (
         <>
