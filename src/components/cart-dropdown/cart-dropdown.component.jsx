@@ -10,7 +10,8 @@ import CartItem from '../cart-item/cart-item.component';
 import './cart-dropdown.styles.scss';
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { state : {cartItems} } = useContext(CartContext);
+  
   const navigate = useNavigate()
 
   return (

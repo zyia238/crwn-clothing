@@ -16,7 +16,7 @@ import './navigation.style.scss'
 
 const Navigation = () => {
     const { state:{currentUser} , dispatch } = useContext(UserContext)
-    const { isCartOpen } = useContext(CartContext);
+    const { state : {isCartOpen} } = useContext(CartContext);
 
     const setCurrentUser = () => {
       dispatch({

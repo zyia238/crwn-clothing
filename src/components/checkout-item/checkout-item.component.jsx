@@ -7,12 +7,26 @@ import './checkout-item.styles.scss';
 const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
 
-  const { clearItemFromCart, addItemToCart, removeItemToCart } =
+  const { dispatch } =
     useContext(CartContext);
 
-  const clearItemHandler = () => clearItemFromCart(cartItem);
-  const addItemHandler = () => addItemToCart(cartItem);
-  const removeItemHandler = () => removeItemToCart(cartItem);
+  const clearItemHandler = () => {
+    dispatch({
+      type:'CLEAR_CART',
+    })
+  };
+  const addItemHandler = () => {
+    dispatch({
+      type:'ADD_TO_CART',
+      payload:cartItem
+    })
+  };
+  const removeItemHandler = () => {
+    dispatch({
+      type:'CLEAR_ITEM',
+      payload:cartItem
+    })
+  };
 
   return (
     <div className='checkout-item-container'>
